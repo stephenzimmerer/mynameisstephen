@@ -54,9 +54,6 @@ $("#usernameInput").on("keyup", function(event) {
 
 $("#pressplay").click(function() {
     $("#video").fadeIn(1000);
-    $(".title").fadeIn(1000);
-    $("#usernameInput").fadeIn(1000);
-    $("#pressplay").fadeOut(1000);
   })
 
 
@@ -85,11 +82,6 @@ $(document).ready(function() {
     player.setVolume(1);
   });
 
-$("#usernameInput").on("keyup", function(event) {
-    if (event.keyCode === 13) {
-      player.setVolume(0);
-    }
-});
 
 
   // get contents of file, and then....
@@ -119,7 +111,7 @@ $("#usernameInput").on("keyup", function(event) {
   function submitText() {
 	var data = {
   	name: $("#usernameInput").val(),
-  	text: $( "#preface option:selected" ).text() + " " + $( "#history option:selected" ).text() + $( "#punctuation option:selected" ).text()
+  	text: $( "#preface option:selected" ).text() + $( "#history option:selected" ).text() + $( "#punctuation option:selected" ).text()
 	};
 
 	shareddatabase.ref(database_refname).push(data); // cchat
